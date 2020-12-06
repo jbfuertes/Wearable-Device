@@ -1,0 +1,2 @@
+rootProject.name='WearableChildObserver'
+include ':app'

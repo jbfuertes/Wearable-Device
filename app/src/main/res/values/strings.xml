@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WearableChildObserver</string>
+
+    <string name="dialog_message_child_notification">ALERT!!\n\nTHE CHILD EXCEEDED 3 METERS IN DISTANCE!</string>
+    <string name="dialog_message_battery_notification">ALERT!!\n\nTHE WEARABLE DEVICE HAS 20% OF BATTERY REMAINING!</string>
+    <string name="dialog_message_detached_notification">ALERT!!\n\nTHE WEARABLE DEVICE HAS BEEN DETACHED!</string>
+</resources>
