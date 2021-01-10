@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity(), View {
     }
 
     private val detachNotifDialog = DialogNotif(DialogNotif.NotificationType.DETACHED) {
-        isChildNotifClosed = true
+        isDetachedNotifClosed = true
     }
 
     private val lowBatteryNotifDialog = DialogNotif(DialogNotif.NotificationType.BATTERY) {
@@ -95,6 +95,9 @@ class MainActivity : AppCompatActivity(), View {
 
             btnReset.setOnClickListener {
                 shouldAllowAlarm = true
+                isChildNotifClosed = false
+                isDetachedNotifClosed = false
+                isLowBatteryNotifClosed = false
                 connectionHelper.sendMessage(RESET)
             }
 

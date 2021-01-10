@@ -127,6 +127,7 @@ class ConnectionHelper(private val view: View, private val wifiManager: WifiMana
 
             }, {
                 it.printStackTrace()
+                view.onReachedSignalThreshold(true)
             }).addTo(disposables)
     }
 
