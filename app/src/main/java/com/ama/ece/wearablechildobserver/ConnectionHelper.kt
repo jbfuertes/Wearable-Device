@@ -69,7 +69,6 @@ class ConnectionHelper(private val view: View, private val wifiManager: WifiMana
                 countDownTimer.cancel()
                 countDownTimer.start()
             }, {
-                Log.d("test", "ObserveMEssage\n${it.localizedMessage}")
                 disconnect()
                 start()
                 it.printStackTrace()
@@ -77,7 +76,7 @@ class ConnectionHelper(private val view: View, private val wifiManager: WifiMana
     }
 
     private fun monitorSignal() {
-        Observable.interval(5000, TimeUnit.MILLISECONDS)
+        Observable.interval(1000, TimeUnit.MILLISECONDS)
             .map { wifiManager.connectionInfo.rssi }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
@@ -92,7 +91,7 @@ class ConnectionHelper(private val view: View, private val wifiManager: WifiMana
             }).addTo(disposables)
     }
 
-    fun start() {
+    private fun start() {
         Completable.fromAction {
             socket = Socket(HOST_ADDRESS, PORT)
             socket?.let {

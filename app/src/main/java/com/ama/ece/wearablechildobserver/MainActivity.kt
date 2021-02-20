@@ -172,13 +172,13 @@ class MainActivity : AppCompatActivity(), View {
     override fun onSignalStrengthChange(it: Int) {
         viewBinding.ivSignalStr.setImageResource(
             when {
-                it > -50 -> R.drawable.ic_signal_wifi_4
+                it > -29 -> R.drawable.ic_signal_wifi_4
 
-                it in -50 downTo -60 -> R.drawable.ic_signal_wifi_3
+                it in -30 downTo -39 -> R.drawable.ic_signal_wifi_3
 
-                it in -60 downTo -70 -> R.drawable.ic_signal_wifi_2
+                it in -40 downTo -49 -> R.drawable.ic_signal_wifi_2
 
-                it in -70 downTo -80 -> R.drawable.ic_signal_wifi_1
+                it in -50 downTo -60 -> R.drawable.ic_signal_wifi_1
 
                 else -> R.drawable.ic_signal_wifi_0
             }
